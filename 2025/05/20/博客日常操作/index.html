@@ -9,7 +9,7 @@
     
     <title>
         
-            标签: test |
+            博客日常操作 |
         
         Tony&#39;s Blog
     </title>
@@ -97,7 +97,7 @@
                         </li>
                     
                         
-                        <li class="menu-item flex-start border-box active">
+                        <li class="menu-item flex-start border-box">
                             <a class="menu-text-color border-box" href="/tags">
                                 
                                     <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
@@ -168,7 +168,7 @@
                 </li>
             
                 
-                <li class="drawer-menu-item border-box not-sub-menu active">
+                <li class="drawer-menu-item border-box not-sub-menu">
                     <label class="drawer-menu-label border-box">
                         <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
                             
@@ -214,47 +214,197 @@
             <div class="main-content border-box">
                 
 
-                    <div class="fade-in-down-animation">
-    <div class="tag-archive-container border-box">
-        <div class="tag-name"><i class="fas fa-hashtag"></i>&nbsp;test
-        </div>
-        <div class="tag-post-list">
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
             
-<div class="archive-list-container border-box">
-    
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year">2025</span>
-            </div>
-            <ul class="archive-item-body border-box">
+
+            <div class="post-content-bottom border-box">
                 
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">04-13</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2025/04/13/testwithpig/"
-                        >testwithpig</a>
-                    </li>
+                    <div class="post-title">
+                        博客日常操作
+                    </div>
                 
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">04-13</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2025/04/13/test/"
-                        >test</a>
-                    </li>
+
                 
-            </ul>
-        </section>
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/myself.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Tony</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-05-20</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Tue May 20 2025 15:19:16 GMT+0800">2025-05-20</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%80%9A%E7%94%A8%E6%95%99%E7%A8%8B/">通用教程</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>575 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
     
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <p>该博客页面由<code>hexo</code>配合 Github 搭建而成，该文章记录常用命令以及日常使用流程，主要是方便自己查阅。</p>
+<p><strong>1、常用命令：</strong></p>
+<ul>
+<li><p>生成静态文件</p>
+<p><code>hexo generate</code> 或者简写为 <code>hexo g</code>，该命令会将博客的源文件（如 Markdown 文章、配置文件等）转换为静态 HTML 文件，生成的文件会放在 <code>public</code> 文件夹中。</p>
+</li>
+<li><p>启动本地服务器</p>
+<p><code>hexo server</code> 或者简写为 <code>hexo s</code>，运行此命令后，Hexo 会启动一个本地服务器，可以通过浏览器访问 <code>http://localhost:4000</code> 来预览博客。在开发过程中，它可以实时显示更改，预览没有问题之后再进行后续部署操作。</p>
+</li>
+<li><p>部署到 GitHub Pages</p>
+<p><code>hexo deploy</code> 或者简写为 <code>hexo d</code>，此命令会将 <code>public</code> 文件夹中的静态文件推送到 GitHub Pages 仓库，来更新博客，等待一会儿之后，就可以访问url地址来看见最新的对外展示博客。</p>
+</li>
+<li><p>新建文章</p>
+<p><code>hexo new &quot;Post Title&quot;</code>，运行此命令后，Hexo 会在 <code>source/_posts</code> 文件夹中创建一个新的 Markdown 文件，文件名是根据文章标题生成的。可以在这个文件中编写博客文章内容。</p>
+</li>
+<li><p>清理缓存</p>
+<p><code>hexo clean</code>，该命令用于清理缓存，可以先执行这个之后再预览或部署，确保缓存不会影响最新的博客展示。</p>
+</li>
+</ul>
+<p><strong>2、日常使用：</strong></p>
+<p>先<code>hexo new &quot;Post Title&quot;</code>，生成想要书写的博客文章，写好内容之后，执行<code>hexo clean</code>清除可能的缓存，再<code>hexo g</code>生成静态文件，<code>hexo s</code>启动本地服务器，浏览器中预览确认没有问题之后，再<code>hexo clean</code>、<code>hexo g</code>、<code>hexo d</code>部署到Github仓库对外展示。</p>
+<p><strong>3、其他：</strong></p>
+<ul>
+<li><p>如果某篇文章还未完成编写，而其他文章等待部署，那么可以该文章的YAML Front-matter添加 daft: true，将文章标记为草稿（draft），草稿不会被生成为静态文件，因此也不会被部署到博客网站中，这样就不会影响其他文章的部署。</p>
+</li>
+<li><p>如果某个文章打算分类到多个标签，那么在YAML Front-matter中的多标签写法如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">tag1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">tag2</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">...</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>迁移操作：&#x2F;&#x2F;TODO</p>
+</li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%80%9A%E7%94%A8%E6%95%99%E7%A8%8B/">通用教程</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/05/02/Git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"
+                                   title="Git实用教程"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Git实用教程</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
         </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
     </div>
-    
+</div>
 
-
-
+            </div>
+        
+    </div>
 </div>
 
 
@@ -283,7 +433,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">92</span>
+                    <span class="item-value border-box word">1.4k</span>
                 </span>
             
 
@@ -310,6 +460,31 @@
     </div>
 
     <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
     
 
     <!-- side tools -->
@@ -342,6 +517,10 @@
 
     <ul class="exposed-tools-list border-box">
         
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
         
 
@@ -369,8 +548,18 @@
 
     <!-- tablet toc -->
     
-</main>
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
 
+            </div>
+        </div>
+    
+</main>
 
 
 
@@ -392,6 +581,20 @@
     
 
     <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
     
 
     <!-- categories page -->

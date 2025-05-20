@@ -9,7 +9,7 @@
     
     <title>
         
-            test |
+            Git实用教程 |
         
         Tony&#39;s Blog
     </title>
@@ -223,7 +223,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        test
+                        Git实用教程
                     </div>
                 
 
@@ -249,13 +249,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-04-13</span>
+                <span class="datetime">2025-05-02</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sun Apr 13 2025 11:20:24 GMT+0800">2025-04-13</span>
+                    <span class="datetime" data-updated="Tue May 20 2025 15:14:41 GMT+0800">2025-05-20</span>
                 </span>
             
         
@@ -266,7 +266,10 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/test/">test</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Git/">Git</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%80%9A%E7%94%A8%E6%95%99%E7%A8%8B/">通用教程</a></li>
                         
                     
                 </ul>
@@ -276,12 +279,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>12 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>797 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -303,8 +306,56 @@
                     
 
                     
-                         <p>那我问你，你头顶怎么尖尖的</p>
+                         <blockquote>
+<p>本教程源于<a class="link"   target="_blank" rel="noopener" href="https://liaoxuefeng.com/books/git/introduction/index.html" >https://liaoxuefeng.com/books/git/introduction/index.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>做了进一步精简，保留命令操作以及使用场景，可将其视为字典，方便查阅</p>
+</blockquote>
+<h2 id="0、Git配置"><a href="#0、Git配置" class="headerlink" title="0、Git配置"></a>0、Git配置</h2><ul>
+<li><p>安装Git</p>
+<p>根据自己的操作系统使用对应的方法来安装Git，网上教程很多，不一一罗列</p>
+</li>
+<li><p>配置Git</p>
+<p>安装好Git之后，使用<code>git config</code>命令进行配置。注意<code>–-global</code>参数的使用。</p>
+<ul>
+<li><p>使用<code>—-global</code>：（全局配置）</p>
+<p>使用示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 
+<p>作用范围：对该操作系统用户账户下的所有 Git 仓库生效</p>
+<p>适用场景：可以设置常用的用户名和邮箱，这样新建仓库时自动使用，不必每次都配置。</p>
+</li>
+<li><p>不使用<code>—-global</code>：（本地配置）</p>
+<p>使用示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>作用范围：当前这一个 Git 仓库</p>
+<p>适用场景：在不同项目中用不同身份提交代码，比如一个公司项目用公司邮箱，个人项目用私人邮箱。</p>
+</li>
+</ul>
+<p>优先级问题：</p>
+<p>在某个仓库中，如果没有本地配置，则会使用全局配置的身份信息来提交代码，如果有本地配置，则会优先使用该仓库的本地配置身份来提交。</p>
+</li>
+</ul>
+<h2 id="1、创建仓库"><a href="#1、创建仓库" class="headerlink" title="1、创建仓库"></a>1、创建仓库</h2><p>1、初始化仓库</p>
+<p>在一个合适的地方创建一个空文件夹，使用<code>git init</code>命令，把这个目录变成Git可以管理的仓库。例如：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\CodeSpace\learngit&gt; git init</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> D:/CodeSpace/learngit/.git/</span><br></pre></td></tr></table></figure>
+
+<p>输出内容表明创建了一个空白仓库，在仓库目录下，有一个隐藏的<code>.git</code>文件夹，这个目录是Git来跟踪管理版本库的，一般不需要去改动其中内容。</p>
+<p>2、向仓库中添加文件</p>
+<p>首先在该目录下编写需要提交的文件，假设为<code>readme.txt</code>，内容为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software.</span><br></pre></td></tr></table></figure>
+
+<p>此时可以使用<code>git status</code>命令查看仓库的文件状态，如下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\CodeSpace\learngit&gt; git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line">        readme.txt</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use <span class="string">&quot;git add&quot;</span> to track)</span><br></pre></td></tr></table></figure>
+
+<p>输出信息表明发现了新的文件（<code>readme.txt</code>），但还没有被 Git 跟踪（untracked）。现在使用<code>git add</code>命令来告诉Git，把文件添加到仓库，同时查看状态，如下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\CodeSpace\learngit&gt; git add readme.txt</span><br><span class="line"><span class="built_in">PS</span> D:\CodeSpace\learngit&gt; git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">        new file:   readme.txt</span><br></pre></td></tr></table></figure>
+
+<p>最后使用<code>git commit</code>命令告诉Git，把文件提交到仓库，同时查看状态，如下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\CodeSpace\learngit&gt; git commit <span class="literal">-m</span> <span class="string">&quot;write a readme file&quot;</span></span><br><span class="line">[<span class="type">master</span> (<span class="type">root</span>-<span class="type">commit</span>) <span class="type">e0fccbb</span>] <span class="built_in">write</span> a readme file</span><br><span class="line"> <span class="number">1</span> file changed, <span class="number">2</span> insertions(+)</span><br><span class="line"> create mode <span class="number">100644</span> readme.txt</span><br><span class="line"><span class="built_in">PS</span> D:\CodeSpace\learngit&gt; git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+
+<p><code>-m</code>后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，来记录为什么有本次提交，这样就能从历史记录里方便地找到改动记录。</p>
+<h2 id="2、时光机穿梭"><a href="#2、时光机穿梭" class="headerlink" title="2、时光机穿梭"></a>2、时光机穿梭</h2>
                     
                 </div>
 
@@ -316,7 +367,11 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/test/">test</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Git/">Git</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%80%9A%E7%94%A8%E6%95%99%E7%A8%8B/">通用教程</a>
                                     </li>
                                 
                             </ul>
@@ -335,35 +390,19 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/04/13/testwithpig/"
-                                   title="testwithpig"
+                                   href="/2025/05/20/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/"
+                                   title="博客日常操作"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">testwithpig</span>
+                                        <span class="post-nav-title-item text-ellipsis">博客日常操作</span>
                                         <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
                             </div>
                         
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2025/04/12/hello-world/"
-                                   title="Hello World"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Hello World</span>
-                                        <span class="post-nav-item">下一篇</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
                         
                     </div>
                 
@@ -384,7 +423,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0%E3%80%81Git%E9%85%8D%E7%BD%AE"><span class="nav-text">0、Git配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-text">1、创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%97%B6%E5%85%89%E6%9C%BA%E7%A9%BF%E6%A2%AD"><span class="nav-text">2、时光机穿梭</span></a></li></ol>
     </div>
 </div>
 
@@ -419,7 +458,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">92</span>
+                    <span class="item-value border-box word">1.4k</span>
                 </span>
             
 
@@ -538,7 +577,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0%E3%80%81Git%E9%85%8D%E7%BD%AE"><span class="nav-text">0、Git配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-text">1、创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%97%B6%E5%85%89%E6%9C%BA%E7%A9%BF%E6%A2%AD"><span class="nav-text">2、时光机穿梭</span></a></li></ol>
     </div>
 </div>
 
